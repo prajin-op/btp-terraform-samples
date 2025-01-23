@@ -40,6 +40,8 @@ resource "btp_subaccount_role_collection_assignment" "bas_developer" {
   user_name            = each.value
   depends_on           = [btp_subaccount_subscription.bas]
 }
+
+
 resource "btp_subaccount_environment_instance" "cloudfoundry" {
   subaccount_id    = btp_subaccount.project.id
   name             = local.project_subaccount_cf_org
