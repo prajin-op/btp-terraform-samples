@@ -108,5 +108,3 @@ variable "cf_space_auditors" {
   description = "The list of Cloud Foundry space auditors."
   default     = []
 }
-
-

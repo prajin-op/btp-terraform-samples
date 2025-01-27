@@ -1,4 +1,3 @@
-
 locals {
   project_subaccount_name   = "${var.org_name} | ${var.project_name}: CF - ${var.stage}"
   project_subaccount_domain = lower(replace("${var.org_name}-${var.project_name}-${var.stage}", " ", ""))
