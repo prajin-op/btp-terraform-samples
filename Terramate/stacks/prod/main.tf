@@ -86,11 +86,3 @@ resource "cloudfoundry_space_role" "cf_space_developers" {
   space      = cloudfoundry_space.space.id
   depends_on = [cloudfoundry_org_role.my_role]
 }
-
-resource "cloudfoundry_space_role" "cf_space_auditors" {
-  for_each   = toset(var.cf_space_auditors)
-  username   = each.value
-  type       = "space_auditor"
-  space      = cloudfoundry_space.space.id
-  depends_on = [cloudfoundry_org_role.my_role]
-}

@@ -1,6 +1,7 @@
 variable "globalaccount" {
   type        = string
   description = "The subdomain of the SAP BTP global account."
+  default     = "terraformintcanary"
 }
 
 variable "idp" {
@@ -16,7 +17,7 @@ variable "region" {
 variable "project_name" {
   type        = string
   description = "The subaccount name."
-  default     = "proj-1234"
+  default     = "Terramate"
 
   validation {
     condition     = can(regex("^[a-zA-Z0-9_\\-]{1,200}", var.project_name))
@@ -51,11 +52,13 @@ variable "org_name" {
 variable "bas_admins" {
   type        = list(string)
   description = "List of users to assign the Administrator role."
+  default     = [ "Admin1@test.com","Admin2@test.com" ]
 
 }
 variable "bas_developers" {
   type        = list(string)
   description = "List of users to assign the Developer role."
+  default     = [ "dev1@test.com","dev2@test.com" ]
 }
 variable "bas_service_name" {
   type        = string
@@ -88,25 +91,18 @@ variable "cf_space_name" {
 variable "cf_org_user" {
   type        = set(string)
   description = "Defines the colleagues who are added to each subaccount as subaccount administrators."
-  default     = ["jane.doe@test.com", "john.doe@test.com"]
+  default     = ["prajin.ollekkatt.prakasan@sap.com"]
 }
 
 variable "cf_space_managers" {
   type        = list(string)
   description = "The list of Cloud Foundry space managers."
-  default     = []
+  default     = ["prajin.ollekkatt.prakasan@sap.com"]
 }
 
 variable "cf_space_developers" {
   type        = list(string)
   description = "The list of Cloud Foundry space developers."
-  default     = []
+  default     = ["prajin.ollekkatt.prakasan@sap.com"]
 }
-
-variable "cf_space_auditors" {
-  type        = list(string)
-  description = "The list of Cloud Foundry space auditors."
-  default     = []
-}
-
 
