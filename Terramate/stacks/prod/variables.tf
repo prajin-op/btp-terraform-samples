@@ -52,7 +52,7 @@ variable "org_name" {
 variable "bas_admins" {
   type        = list(string)
   description = "List of users to assign the Administrator role."
-  default = [ "admin1@test.com","admin2@test.com" ]
+  default = [ "admin1@test.com","adminnew@test.com" ]
 
 }
 variable "bas_developers" {
