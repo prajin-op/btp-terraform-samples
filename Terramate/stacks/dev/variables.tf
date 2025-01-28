@@ -1,7 +1,7 @@
 variable "globalaccount" {
   type        = string
   description = "The subdomain of the SAP BTP global account."
-  default     = "terraformintcanary"
+  default     = "terraformintprod"
 }
 
 variable "idp" {
